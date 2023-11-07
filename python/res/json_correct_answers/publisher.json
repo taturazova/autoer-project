@@ -1,0 +1,106 @@
+{
+    "entities": [
+        {
+            "entity_name": "Publisher",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Category",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "App",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "description",
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "AppVersion",
+            "primary_key": [],
+            "partial_primary_key": [
+                "version"
+            ],
+            "attributes": [
+                "description",
+                "price",
+                "rating",
+                "releaseDate",
+                "version"
+            ]
+        },
+        {
+            "entity_name": "AppVersionReview",
+            "primary_key": [],
+            "partial_primary_key": [
+                "reviewer"
+            ],
+            "attributes": [
+                "rating",
+                "review",
+                "reviewDate",
+                "reviewer"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "App",
+                "Publisher"
+            ],
+            "Publisher": "1..1",
+            "App": "0..*"
+        },
+        {
+            "entities": [
+                "App",
+                "AppVersion"
+            ],
+            "App": "1..1",
+            "AppVersion": "*"
+        },
+        {
+            "entities": [
+                "App",
+                "Category"
+            ],
+            "App": "0..*",
+            "Category": "1..1"
+        },
+        {
+            "entities": [
+                "AppVersion",
+                "AppVersionReview"
+            ],
+            "AppVersion": "1..1",
+            "AppVersionReview": "0..*"
+        },
+        {
+            "entities": [
+                "Category",
+                "Category"
+            ],
+            "Category": "0..1"
+        }
+    ]
+}

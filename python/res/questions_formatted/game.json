@@ -1,0 +1,24 @@
+{
+    "id": 6,
+    "title": "game",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "Design an ER diagram in UML format for a game database given these details:\n\nA [publisher](publisher) is identified by [name](name) and [releases](releases) [games](game). A [game](game) may be released by multiple [publishers](publisher), and each [publisher](publisher) gets credit for a [percent](percent) of the game. (e.g. Publisher A 60%, Publisher B 40%).\nA [game](game) is identified by [id](id) and also has a [name](name). \nA [game](game) has one [category](category), and a [category](category) may describe multiple [games](game). A [category](category) is identified by an [id](id) and has a [name](name). A [category](category) may also have multiple [subcategories](category).\nA [player](player) is identified by a [userid](userId) and also has a [name](name) and [age](age). A [player](player) may own multiple [games](game), and a [game](game) may be owned by multiple [players](player).\nA [session](session) is a particular player playing a game, and the [start time](startTime) is used to identify between sessions of the same game and player combination.\nDuring a [session](session), [stats](stats) are recorded. For a particular [session](session), the [name of the stat](statName) identifies it, and a [value](value) is stored for this statistic.\n",
+    "answers": [
+        {
+            "answer": "[Publisher|name {PK}]\n[Releases|percent]\n[Game|id {PK};name]\n[Category|id {PK};name]\n[Player|userId {PK};name;age]\n[Session|startTime {PPK}]\n[Stats|statName {PPK};value]\n[Publisher]1..1 - 0..*[Releases]\n[Releases]0..* - 1..1[Game]\n[Game]0..* - 1..1[Category]\n[Category]1..1 - 0..*[Category]\n[Game]1..1 - 0..*[Session]\n[Game]0..* - 0..*[Player]\n[Session]0..* - 1..1[Player]\n[Session]1..1 - 0..*[Stats]"
+        }
+    ]
+}

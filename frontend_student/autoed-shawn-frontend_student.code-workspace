@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "name": "AutoEd Student Frontend",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "workbench.colorTheme": "SynthWave '84",
+		"material-icon-theme.activeIconPack": "react",
+
+  }
+}
+
+

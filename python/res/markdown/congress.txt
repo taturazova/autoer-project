@@ -1,0 +1,7 @@
+Representatives during the current two year congressional session. 
+The database needs to keep track of each U.S. [State's](State) [name](name) including [region](Region). 
+The [region](Region) has a [name](name) from the domain of {Northeast, Midwest, Southeast, Southwest, and West} and a [description](description) of the region. 
+Each [congressperson](Congressperson) in the House is described by [name](name), [district](district) represented, [start date](startdate), and political [party](party). 
+Each [state](State) is represented by at least one [congressperson](Congressperson). 
+The database keeps track of each [bill](Bill) (proposed law) including bill [name](name), [date](votedate) of vote, [passed or failed](status), and the sponsor [congressperson](Congressperson) of the bill. 
+The database keeps track of how each [congressperson](Congressperson) [voted on](VotesOn) each bill [{Yes, No, Abstain, Absent}](vote). State clearly any assumptions.

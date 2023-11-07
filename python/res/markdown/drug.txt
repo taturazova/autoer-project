@@ -1,0 +1,10 @@
+The ACME chain of pharmacies agrees to pay you to design and implement a database based on the following information:
+
+[Patients](Patient) are indentified by [SSN](ssn), and their [names](name), [addresses](address), and [ages](age) must be recorded.
+[Doctors](Doctor) are identified by [SSN](ssn). For each [doctor](Doctor), the [name](name), [specialty](specialty), and [years of experience](experience) are recorded.
+For each [drug](Drug), the trade [name](name) and [formula](formula) must be recorded. The trade name identifies a drug uniquely.
+Each [pharmacy](Pharmacy) has a [name](name), [address](address), [phone number](phone), and a unique [id](id).
+Every [patient](patient) has only one primary physician. Every [doctor](doctor) has at least one [patient](patient).
+Each [pharmacy](pharmacy) [sells](sells) several [drugs](drug) and has a [price](price) for each. A drug could be [sold at](sells) several pharmacies, and the price could vary from one pharmacy to another.
+[Doctors](doctor) prescribe [drugs](drug) for patients. A [patient](patient) could obtain drug [prescriptions](prescription) from multiple doctors. Each [prescription](prescription) has a [date](date) and a [quantity](quantity) associated with it. You can assume that, if a doctor prescribes the same drug for the same patient more than once, only the last such prescription needs be stored.
+[Supervisors](supervisor) manage each pharmacy. Every [supervisor](supervisor) has a [name](name) and [id](id). A [supervisor](supervisor) manages only one [pharmacy](pharmacy), and each pharmacy always has one supervisor.

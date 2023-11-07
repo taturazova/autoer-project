@@ -1,0 +1,8 @@
+The logistics manager at your company wants to design a database to store the following information about warehouses.
+Each [warehouse](warehouse) has a unique [warehouse name](warehouseName). Also, store the [city](city) and [state](state) of the warehouse. 
+[Products](product) have a unique [product id](productId), [name](name), and [price](price). 
+Store the [volume](inventory)(inventory) of each [product](product) [at each](stores) [warehouse](warehouse). 
+Not all [products](product) are [stored at](stores) each [warehouse](warehouse) and a [warehouse](warehouse) may not [store](stores) all [products](product).
+A [shipment](shipment) identified by a unique [shipment number](shipmentNumber) has a [shipper name](shipperName) and [contact](contact). A [shipment](shipment) is filled from only one [warehouse](warehouse). 
+Each [shipment](shipment) [contains](contains) at least one [product](product). Each [product](product) [shipped](contains) has a [quantity](quantity).
+A [shipment](shipment) goes to a single [customer](customer) where each [customer](customer) is identified by a [customer number](customerNum), [name](name), and [address](address).

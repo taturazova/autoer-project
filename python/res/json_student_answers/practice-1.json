@@ -1,0 +1,154 @@
+{
+    "entities": [
+        {
+            "entity_name": "Department",
+            "primary_key": [
+                "name"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "description",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Doctor",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "WorksIn",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "title"
+            ]
+        },
+        {
+            "entity_name": "Patient",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "age",
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Drug",
+            "primary_key": [
+                "upcCode"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "name",
+                "upcCode"
+            ]
+        },
+        {
+            "entity_name": "Visit",
+            "primary_key": [],
+            "partial_primary_key": [
+                "date"
+            ],
+            "attributes": [
+                "date"
+            ]
+        },
+        {
+            "entity_name": "Test",
+            "primary_key": [],
+            "partial_primary_key": [
+                "name"
+            ],
+            "attributes": [
+                "cost",
+                "name",
+                "outcome"
+            ]
+        },
+        {
+            "entity_name": "Prescription",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "date",
+                "dosage"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Department",
+                "WorksIn"
+            ],
+            "Department": "1..1",
+            "WorksIn": "1..*"
+        },
+        {
+            "entities": [
+                "Doctor",
+                "WorksIn"
+            ],
+            "Doctor": "1..1",
+            "WorksIn": "1..*"
+        },
+        {
+            "entities": [
+                "Doctor",
+                "Visit"
+            ],
+            "Doctor": "1..1",
+            "Visit": "0..*"
+        },
+        {
+            "entities": [
+                "Doctor",
+                "Prescription"
+            ],
+            "Doctor": "1..1",
+            "Prescription": "0..*"
+        },
+        {
+            "entities": [
+                "Drug",
+                "Prescription"
+            ],
+            "Prescription": "0..*",
+            "Drug": "1..1"
+        },
+        {
+            "entities": [
+                "Patient",
+                "Visit"
+            ],
+            "Patient": "1..1",
+            "Visit": "0..*"
+        },
+        {
+            "entities": [
+                "Patient",
+                "Prescription"
+            ],
+            "Patient": "1..1",
+            "Prescription": "0..*"
+        },
+        {
+            "entities": [
+                "Test",
+                "Visit"
+            ],
+            "Visit": "1..1",
+            "Test": "0..*"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": 5,
+    "title": "medicalsystem",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "There are multiple [hospitals](hospital) in the medical system. A [hospital](hospital) is identified by its [name](hospitalName) and has a [location](location).\nA [doctor](doctor) is identified by their [medical number](medicalNum) and has a [name](name). Each [hospital](hospital) has a single [doctor](doctor) as a manager, and a [doctor](doctor) may manage only one [hospital](hospital).\n[Doctors](doctor) are [located in](locatedIn) [hospitals](hospital). A doctor may be [located in](locatedIn) more than one [hospital](hospital). A doctor located at a hospital has an [office number](officeNum) and a [salary](salary) paid by that [hospital](hospital).\nA [patient](patient) is identified by their [health id](healthId) and also has a [name](name) and [gender](gender).\nA [patient](patient) [visits](visit) a [doctor](doctor) at a particular [hospital](hospital). Each [visit](visit) is identifed by its own [id](visitId) and also has a [visit date](date).\nAt a [visit](visit) zero or more [tests](test) are run each with a [cost](cost) and an [outcome](outcome). Each [test](test) is identified for a particular [visit](visit) by [name](testName).",
+    "answers": [
+        {
+            "answer": "[Hospital|hospitalName {PK};location]\n[Doctor|medicalNum {PK};name]\n[LocatedIn|officeNum;salary]\n[Patient|healthId {PK};name;gender]\n[Visit|visitId {PK};date]\n[Test|testName {PPK};cost;outcome]\n[Hospital]0..1 - 0@1[Doctor]\n[Hospital]1..1 - *[LocatedIn]\n[Doctor]1..1 - *[LocatedIn]\n[Hospital]1..1 - 0..*[Visit]\n[Doctor]1..1 - 0..*[Visit]\n[Patient]1..1 - 0..*[Visit]\n[Test]0..* - 1..1[Visit]"
+        }
+    ]
+}

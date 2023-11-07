@@ -1,0 +1,7 @@
+Construct a database design in UML for an app store described below.
+
+A [Publisher](publisher) where each [publisher](publisher) is identified by an [id](id) and has a [name](name).
+A [Category](category) where each [category](category) has an [id](id), a [name](name), and may have a parent [category](category).
+An [App](app) storing each [app](app) that is identified by a field called [id](id) and other attributes include [name](name) and [description](description). An [App](app) is created by one [Publisher](publisher). A [Publisher](publisher) may publish multiple [Apps](app). An [App](app) has a [Category](category).
+A [AppVersion](appVersion) stores each version of the app. An [AppVersion](appVersion) is associated with exactly one [App](app). Use a [version](version) field to identify between [versions](appVersion) of the same [App](app). Each [AppVersion](appVersion) has a [release date](releaseDate), a [rating](rating), a [price](price), and a [description](description).
+A [AppVersionReview](appVersionReview) stores [ratings](rating) for each application version. Each [instance](appVersionReview) applies to a single [AppVersion](appVersion), and different [reviews](appVersionReview) are identified by [reviewer](reviewer) attribute (which is name of reviewer). There is also a [reviewDate](reviewDate), [rating](rating), and [review](review).

@@ -1,0 +1,13 @@
+Draw the ER diagram for tracking football statistics for quarterbacks and runningbacks in college football:
+The league will have multiple [teams](team), each with a unique [team name](teamName). 
+For each [game](game) played, there is a [home team](homeTeam), an [away team](awayTeam), [home points](homePoints), [away points](awayPoints), and a [date](gameDate). 
+A [game](game) is identified by the [home team](homeTeam), an [away team](awayTeam), and the [date](date). 
+All [teams](team) play multiple home and away games per season. 
+The teams all have [quarterbacks](Quarterback) and [runningbacks](Runningback) that are identified by [team name](teamName) and [jersey number](number).  Also store a player [name](name). 
+The [team name](teamName) and [number](number) will be unique for each player, while their [name](name) may not be unique. 
+Each [runningback](Runningback) has a [type](type) {fullback or halfback}. Each [quarterback](Quarterback) has a [status](status) {starter, backup}. 
+[Statistics](Stats) are compiled for each [game](game) for each player. 
+The [runningback statistics](RBGameStats) will include [carries](carries), [yards](yards), and [fumbles](fumbles). 
+The [quarterback statistics](QBGameStats) include [passes](passes), [yards](yards), and [interceptions](interceptions). 
+In addition, each team is represented by a single [coach](coach). 
+A [coach](coach) can coach only one [team](team). Keep track of each coach's [name](name) and [salary](salary).

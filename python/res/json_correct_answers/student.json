@@ -1,0 +1,116 @@
+{
+    "entities": [
+        {
+            "entity_name": "Instructor",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Department",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Course",
+            "primary_key": [],
+            "partial_primary_key": [
+                "courseNum"
+            ],
+            "attributes": [
+                "courseName",
+                "courseNum",
+                "credits",
+                "description"
+            ]
+        },
+        {
+            "entity_name": "Section",
+            "primary_key": [],
+            "partial_primary_key": [
+                "sectionNum",
+                "semester",
+                "year"
+            ],
+            "attributes": [
+                "sectionNum",
+                "semester",
+                "size",
+                "year"
+            ]
+        },
+        {
+            "entity_name": "Student",
+            "primary_key": [
+                "studentId"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "name",
+                "studentId"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Course",
+                "Department"
+            ],
+            "Department": "1..1",
+            "Course": "1..*"
+        },
+        {
+            "entities": [
+                "Course",
+                "Section"
+            ],
+            "Course": "1..1",
+            "Section": "1..*"
+        },
+        {
+            "entities": [
+                "Department",
+                "Instructor"
+            ],
+            "Instructor": "1..*",
+            "Department": "1..1"
+        },
+        {
+            "entities": [
+                "Instructor",
+                "Student"
+            ],
+            "Instructor": "1..1",
+            "Student": "0..*"
+        },
+        {
+            "entities": [
+                "Instructor",
+                "Section"
+            ],
+            "Instructor": "1..*",
+            "Section": "0..*"
+        },
+        {
+            "entities": [
+                "Section",
+                "Student"
+            ],
+            "Student": "1..*",
+            "Section": "1..*"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": 7,
+    "title": "banks",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "Draw the ER diagram for a database to store information about all banks with branches. \nEach [bank](Bank) has a unique [federal code](code), [name](name), and [corporate address](address). \nBanks can have numerous [branches](Branch), each with a unique [branch code](specialCode) and an [address](address). \nA [customer](Customer) is identified by [social security number](ssn) and also has a [name](name), [phone number](phone), and [address](address). \nA customer may have multiple [loans](Loan) or [savings accounts](Account) which may be at different branches. \nA customer is not affiliated with a branch directly, only indirectly if they have a [loan](Loan) or [account](Account) at that branch. \nEach [loan](Loan) has a [loan number](number) (unique only for a branch) and a loan [amount](amount). \nEach [savings account](Account) has an [account number](number) (unique only for a branch) and a [balance](balance). \nA loan or account can only belong to a single customer and a single branch.",
+    "answers": [
+        {
+            "answer": "[Bank|code {PK};name;address]\n[Branch|code {PK};address]\n[Customer|ssn {PK};name;phone;address]\n[Loan|number {PPK};amount]\n[Account|number {PPK};balance]\n[Bank]1..1 - 1..*[Branch]\n[Branch]1..1 - 0..*[Account]\n[Branch]1..1 - 0..*[Loan]\n[Account]0..* - 1..1[Customer]\n[Loan]0..* - 1..1[Customer]"
+        }
+    ]
+}

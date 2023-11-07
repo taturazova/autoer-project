@@ -1,0 +1,24 @@
+{
+    "id": 9,
+    "title": "claim",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "A [Person](Person) is identified by [social security number](socialsecurity). The person [name](name) and [address](address) must be recorded.\n[Cars](Car) are identified by [license plate](licence) and [state](state). For each car, the [model](model), [make](make), and [year](year) is recorded.\nA [claim](Claim) has a unique [id](claimid). Also store a [policy number](policynum) and [description](description).\nA [car](Car) is owned by a single [person](Person). A person may own multiple cars.\nA [claim](Claim) has multiple [line items](LineItem). Each [line item](LineItem) involves a particular person and car involved in the claim. A [l]ine item](LineItem) should store the [date](date) it was created and the [amount](amount) claimed. A line item is identified by its creation date and the claim id it is associated with.\nMultiple [payments](Payment) may be made for a claim to the person involved in the claim with values for [amount](amount) and [date](date) of payment.\nDraw the ER diagram for this database and convert it a into relational schema. This time create the schema using SQL DDL and make sure to define primary keys and foreign keys.",
+    "answers": [
+        {
+            "answer": "[Person|socialsecurity {PK};name;address]\n[Car|licence {PK};state {PK};model;make;year]\n[Claim|claimid {PK};policynum;description]\n[Lineitem|date {PPK};amount]\n[Payment|amount;date {PPK}]\n[Person]1..1 - 0..*[Car]\n[Person]1..1 - 0..*[Payment]\n[Person]1..1 - 0..*[Lineitem]\n[Car]1..1 - 0..*[Lineitem]\n[Lineitem]0..* - 1..1[Claim]\n[Payment]0..* - 1..1[Claim]"
+        }
+    ]
+}

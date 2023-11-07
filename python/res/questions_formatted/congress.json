@@ -1,0 +1,24 @@
+{
+    "id": 12,
+    "title": "congress",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "Representatives during the current two year congressional session. \nThe database needs to keep track of each U.S. [State's](State) [name](name) including [region](Region). \nThe [region](Region) has a [name](name) from the domain of {Northeast, Midwest, Southeast, Southwest, and West} and a [description](description) of the region. \nEach [congressperson](Congressperson) in the House is described by [name](name), [district](district) represented, [start date](startdate), and political [party](party). \nEach [state](State) is represented by at least one [congressperson](Congressperson). \nThe database keeps track of each [bill](Bill) (proposed law) including bill [name](name), [date](votedate) of vote, [passed or failed](status), and the sponsor [congressperson](Congressperson) of the bill. \nThe database keeps track of how each [congressperson](Congressperson) [voted on](VotesOn) each bill [{Yes, No, Abstain, Absent}](vote). State clearly any assumptions.\n",
+    "answers": [
+        {
+            "answer": "[State|name {PK}]\n[Region|name {PK};description]\n[Congressperson|name {PK};district {PK};startdate;party]\n[Voteson|vote]\n[Bill|name {PK};votedate;status]\n[Region]1..1 - 1..*[State]\n[State]1..1 - 1..*[Congressperson]\n[Congressperson]1..1 - 0..*[Bill]\n[Voteson]0..* - 1..1[Bill]\n[Congressperson]1..1 - 0..*[Voteson]"
+        }
+    ]
+}

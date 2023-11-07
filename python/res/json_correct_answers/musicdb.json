@@ -1,0 +1,136 @@
+{
+    "entities": [
+        {
+            "entity_name": "Artist",
+            "primary_key": [],
+            "partial_primary_key": [
+                "artistId"
+            ],
+            "attributes": [
+                "age",
+                "artistId",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Song",
+            "primary_key": [
+                "songId"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "songId",
+                "title"
+            ]
+        },
+        {
+            "entity_name": "Label",
+            "primary_key": [
+                "labelName"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "labelName"
+            ]
+        },
+        {
+            "entity_name": "IsOn",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "duration",
+                "trackNum"
+            ]
+        },
+        {
+            "entity_name": "Album",
+            "primary_key": [
+                "upcCode"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "albumName",
+                "sales",
+                "upcCode"
+            ]
+        },
+        {
+            "entity_name": "Releases",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "artistNum"
+            ]
+        },
+        {
+            "entity_name": "Genre",
+            "primary_key": [
+                "genreName"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "description",
+                "genreName"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Album",
+                "Releases"
+            ],
+            "Releases": "1..*",
+            "Album": "1..1"
+        },
+        {
+            "entities": [
+                "Album",
+                "IsOn"
+            ],
+            "IsOn": "1..*",
+            "Album": "1..1"
+        },
+        {
+            "entities": [
+                "Album",
+                "Genre"
+            ],
+            "Album": "0..*",
+            "Genre": "1..1"
+        },
+        {
+            "entities": [
+                "Artist",
+                "Label"
+            ],
+            "Label": "1..1",
+            "Artist": "0..*"
+        },
+        {
+            "entities": [
+                "Artist",
+                "Song"
+            ],
+            "Artist": "1..*",
+            "Song": "0..*"
+        },
+        {
+            "entities": [
+                "Artist",
+                "Releases"
+            ],
+            "Artist": "1..1",
+            "Releases": "0..*"
+        },
+        {
+            "entities": [
+                "IsOn",
+                "Song"
+            ],
+            "Song": "1..1",
+            "IsOn": "1..*"
+        }
+    ]
+}

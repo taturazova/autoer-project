@@ -1,0 +1,7 @@
+An [artist](artist) is a musician who records [songs](song). 
+An [artist](artist) has a [record label](label). An [artist](artist) is identified by an [id](artistId) that is specific to their [record label](label). That is, each [record label](label) assigns its own [ids](artistId). Also, record an [artist’s](artist) [name](name) and [age](age).
+A [record label](label) has a unique [name](labelName) and an [address](address).
+A [song](song) is recorded by one or more [artists](artist) and is uniquely identified by an [id](songId) field and has a [title](title).
+A [song](song) [is on](isOn) one or more [albums](album) with a [track number](trackNum) and [duration](duration).  (Note: Assume an artist can put the same song on multiple albums, but any song change is given a new id.)
+An [album](album) is a collection of [songs](song) with a [name](albumName). Track the number of [sales](sales) of an [album](album). An [album](album) may be [associated with](releases) multiple [artists](artist) and is identified by an [UPC code](upcCode). An [artist](artist) [on an](releases) [album](album) is given a [number](artistNum) (first artist, second artist, etc.).
+An [album](album) is classified in a single [genre](genre) (rap, classical, etc.). A [genre](genre) is identified by [name](genreName) and also has a [description](description).

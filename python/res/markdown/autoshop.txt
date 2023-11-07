@@ -1,0 +1,9 @@
+[Customers](Customer) bring their [cars](Car) to the shop for an estimate of repairs. 
+One [mechanic](Mechanic) looks at the car and estimates the total [cost](cost) and [time](time) required for the job. 
+An [estimate](Estimate) has a unique [id](id). If the [customer](Customer) accepts the [estimate](Estimate), a [job](Job) is created from the estimate. 
+A [job](Job) has a unique [number](num) is scheduled for a certain [date](repairDate). 
+Information on the [car](Car) is recorded such as the car's [license plate number](licnum) (unique), [make](make), [model](model), [year](year), and the customer's [name](custName) and [address](custAddress). 
+A car may come in for service multiple times (may have multiple jobs). 
+A [job](Job) is divided into a list of [repairs](Repair). Each [repair](Repair) has a [number](num), [part cost](partCost) and [description](description). 
+A repair may be [done by](WorksOn) one or more mechanics, who can work for different amounts of [time](time). A [mechanic](mechanic) has a unique [name](name) and an [hourly rate](hourlyRate). 
+The [labor cost](laborCost) of a mechanic [working on](WorksOn) a repair is calculated using his time and the mechanic's hourly rate.

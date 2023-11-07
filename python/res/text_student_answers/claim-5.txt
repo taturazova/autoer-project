@@ -1,0 +1,7 @@
+[Person|socialsecurity;name;address]
+[Car|licence;state;model;make]
+[Claim|claimid;policynum;description]
+[Lineitem|date;amount]
+[Car]1..1 - 0..*[Lineitem]
+[Person]1..* - 0..*[Car]
+[Person]1..1 - 1..1[Lineitem]

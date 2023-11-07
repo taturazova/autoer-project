@@ -1,0 +1,155 @@
+{
+    "entities": [
+        {
+            "entity_name": "Coach",
+            "primary_key": [
+                "name"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "name",
+                "salary"
+            ]
+        },
+        {
+            "entity_name": "Team",
+            "primary_key": [
+                "teamName"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "teamName"
+            ]
+        },
+        {
+            "entity_name": "Game",
+            "primary_key": [],
+            "partial_primary_key": [
+                "gameDate"
+            ],
+            "attributes": [
+                "awayPoints",
+                "gameDate",
+                "homePoints"
+            ]
+        },
+        {
+            "entity_name": "Runningback",
+            "primary_key": [],
+            "partial_primary_key": [
+                "number"
+            ],
+            "attributes": [
+                "name",
+                "number",
+                "type"
+            ]
+        },
+        {
+            "entity_name": "Quarterback",
+            "primary_key": [],
+            "partial_primary_key": [
+                "number"
+            ],
+            "attributes": [
+                "name",
+                "number",
+                "status"
+            ]
+        },
+        {
+            "entity_name": "QBGameStats",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "interceptions",
+                "passes",
+                "yards"
+            ]
+        },
+        {
+            "entity_name": "RBGameStats",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "carries",
+                "fumbles",
+                "yards"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Coach",
+                "Team"
+            ],
+            "Coach": "1..1",
+            "Team": "1..1"
+        },
+        {
+            "entities": [
+                "Game",
+                "Team"
+            ],
+            "Team": "1..1",
+            "Game": "0..*"
+        },
+        {
+            "entities": [
+                "Game",
+                "Team"
+            ],
+            "Team": "1..1",
+            "Game": "0..*"
+        },
+        {
+            "entities": [
+                "Game",
+                "QBGameStats"
+            ],
+            "QBGameStats": "0..*",
+            "Game": "1..1"
+        },
+        {
+            "entities": [
+                "Game",
+                "RBGameStats"
+            ],
+            "RBGameStats": "0..*",
+            "Game": "1..1"
+        },
+        {
+            "entities": [
+                "QBGameStats",
+                "Quarterback"
+            ],
+            "Quarterback": "1..1",
+            "QBGameStats": "0..*"
+        },
+        {
+            "entities": [
+                "Quarterback",
+                "Team"
+            ],
+            "Quarterback": "*",
+            "Team": "1..1"
+        },
+        {
+            "entities": [
+                "RBGameStats",
+                "Runningback"
+            ],
+            "Runningback": "1..1",
+            "RBGameStats": "0..*"
+        },
+        {
+            "entities": [
+                "Runningback",
+                "Team"
+            ],
+            "Runningback": "*",
+            "Team": "1..1"
+        }
+    ]
+}

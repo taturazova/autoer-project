@@ -1,0 +1,172 @@
+{
+    "entities": [
+        {
+            "entity_name": "Hotel",
+            "primary_key": [
+                "name"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "city",
+                "name",
+                "phoneNumber",
+                "postalCode",
+                "state",
+                "streetName",
+                "streetNumber",
+                "webAddress"
+            ]
+        },
+        {
+            "entity_name": "Floor",
+            "primary_key": [],
+            "partial_primary_key": [
+                "number"
+            ],
+            "attributes": [
+                "number"
+            ]
+        },
+        {
+            "entity_name": "Room",
+            "primary_key": [],
+            "partial_primary_key": [
+                "identifier"
+            ],
+            "attributes": [
+                "identifier",
+                "isSmokingRoom",
+                "numbed"
+            ]
+        },
+        {
+            "entity_name": "Reservation",
+            "primary_key": [],
+            "partial_primary_key": [
+                "arrivalDate"
+            ],
+            "attributes": [
+                "arrivalDate",
+                "creditCardExpiry",
+                "creditCardNum",
+                "creditCardType",
+                "departDate",
+                "highOrLowFloor",
+                "numBeds",
+                "smokingRoom"
+            ]
+        },
+        {
+            "entity_name": "Customer",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "cellPhoneNumber",
+                "city",
+                "country",
+                "emailAddress",
+                "firstName",
+                "homePhoneNumber",
+                "id",
+                "lastName",
+                "middleName",
+                "postalCode",
+                "state",
+                "workPhoneNumber"
+            ]
+        },
+        {
+            "entity_name": "Invoice",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "closeDate",
+                "id",
+                "openDate",
+                "totalBalance"
+            ]
+        },
+        {
+            "entity_name": "InvoiceCharge",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "amount",
+                "chargeType",
+                "description",
+                "transactionId{PPK, auto}"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Customer",
+                "Reservation"
+            ],
+            "Reservation": "0..*",
+            "Customer": "1..1"
+        },
+        {
+            "entities": [
+                "Floor",
+                "Hotel"
+            ],
+            "Hotel": "1..1",
+            "Floor": "1..*"
+        },
+        {
+            "entities": [
+                "Floor",
+                "Room"
+            ],
+            "Floor": "1..1",
+            "Room": "0..*"
+        },
+        {
+            "entities": [
+                "Hotel",
+                "Room"
+            ],
+            "Hotel": "1..1",
+            "Room": "1..*"
+        },
+        {
+            "entities": [
+                "Hotel",
+                "Reservation"
+            ],
+            "Hotel": "1..1",
+            "Reservation": "0..*"
+        },
+        {
+            "entities": [
+                "Invoice",
+                "Reservation"
+            ],
+            "Reservation": "1..1",
+            "Invoice": "1..1"
+        },
+        {
+            "entities": [
+                "Invoice",
+                "InvoiceCharge"
+            ],
+            "InvoiceCharge": "0..*",
+            "Invoice": "1..1"
+        },
+        {
+            "entities": [
+                "Reservation",
+                "Room"
+            ],
+            "Reservation": "0..*",
+            "Room": "1..1"
+        }
+    ]
+}

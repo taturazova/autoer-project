@@ -1,0 +1,8 @@
+The hospital has [departments](department) which have a unique [name](departmentName) and also a [description](description).
+The hospital has [doctors](doctor). Each [doctor](doctor) is assigned a unique [id](doctorId) and has a [name](name). 
+A [doctor](doctor) may [work in](worksIn) multiple [departments](department). In each [department](department) a doctor [works](worksIn), they are given a [position title](positionTitle).
+[Patients](patient) come to the [hospital](hospital) and are assigned a unique [id](patientId).  Also store their [name](name) and [age](age).
+A list of [drugs](drug) is maintained. Each [drug](drug) is identified by a [UPC code](upcCode) and has a [name](name).
+A [patient](patient) [visits](visit) the [hospital](hospital). Each [visit](visit) is identified by the patient id, doctor id, and the [date](date) together.
+At a [visit](visit), zero or more [tests](test) are run. Each [test](test) has a unique [name](testName), and also a [cost](cost) and an [outcome](outcome). A particular [test](test) is run only once per [visit](visit).
+A [doctor](doctor) may [prescribe](prescription) a [drug](drug) for a [patient](patient). Each [prescription](prescription) is for a single [patient](patient) by a single [doctor](doctor) for a single [drug](drug) and also contains a [dosage](dosage) and [prescription date](prescriptionDate).

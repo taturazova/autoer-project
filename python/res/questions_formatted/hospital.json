@@ -1,0 +1,24 @@
+{
+    "id": 3,
+    "title": "hospital",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "The hospital has [departments](department) which have a unique [name](departmentName) and also a [description](description).\nThe hospital has [doctors](doctor). Each [doctor](doctor) is assigned a unique [id](doctorId) and has a [name](name). \nA [doctor](doctor) may [work in](worksIn) multiple [departments](department). In each [department](department) a doctor [works](worksIn), they are given a [position title](positionTitle).\n[Patients](patient) come to the [hospital](hospital) and are assigned a unique [id](patientId).  Also store their [name](name) and [age](age).\nA list of [drugs](drug) is maintained. Each [drug](drug) is identified by a [UPC code](upcCode) and has a [name](name).\nA [patient](patient) [visits](visit) the [hospital](hospital). Each [visit](visit) is identified by the patient id, doctor id, and the [date](date) together.\nAt a [visit](visit), zero or more [tests](test) are run. Each [test](test) has a unique [name](testName), and also a [cost](cost) and an [outcome](outcome). A particular [test](test) is run only once per [visit](visit).\nA [doctor](doctor) may [prescribe](prescription) a [drug](drug) for a [patient](patient). Each [prescription](prescription) is for a single [patient](patient) by a single [doctor](doctor) for a single [drug](drug) and also contains a [dosage](dosage) and [prescription date](prescriptionDate).",
+    "answers": [
+        {
+            "answer": "[Department|departmentName {PK};description]\n[Doctor|doctorId {PK};name]\n[WorksIn|positionTitle]\n[Patient|patientId {PK};name;age]\n[Drug|upcCode {PK};name]\n[Visit|date {PPK}]\n[Test|testName {PPK};cost;outcome]\n[Prescription|dosage;prescriptionDate]\n[Department]1..1 - 0..*[WorksIn]\n[Doctor]1..1 - 0..*[WorksIn]\n[Doctor]1..1 - 0..*[Prescription]\n[Doctor]1..1 - 0..*[Visit]\n[Test]0..* - 1..1[Visit]\n[Patient]1..1 - 0..*[Visit]\n[Patient]1..1 - 0..*[Prescription]\n[Drug]1..1 - 0..*[Prescription]"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": 11,
+    "title": "musicdb",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "An [artist](artist) is a musician who records [songs](song). \nAn [artist](artist) has a [record label](label). An [artist](artist) is identified by an [id](artistId) that is specific to their [record label](label). That is, each [record label](label) assigns its own [ids](artistId). Also, record an [artist\u2019s](artist) [name](name) and [age](age).\nA [record label](label) has a unique [name](labelName) and an [address](address).\nA [song](song) is recorded by one or more [artists](artist) and is uniquely identified by an [id](songId) field and has a [title](title).\nA [song](song) [is on](isOn) one or more [albums](album) with a [track number](trackNum) and [duration](duration).  (Note: Assume an artist can put the same song on multiple albums, but any song change is given a new id.)\nAn [album](album) is a collection of [songs](song) with a [name](albumName). Track the number of [sales](sales) of an [album](album). An [album](album) may be [associated with](releases) multiple [artists](artist) and is identified by an [UPC code](upcCode). An [artist](artist) [on an](releases) [album](album) is given a [number](artistNum) (first artist, second artist, etc.).\nAn [album](album) is classified in a single [genre](genre) (rap, classical, etc.). A [genre](genre) is identified by [name](genreName) and also has a [description](description).",
+    "answers": [
+        {
+            "answer": "[Artist|artistId {PPK};name;age]\n[Song|songId {PK};title]\n[Label|labelName {PK};address]\n[IsOn|trackNum;duration]\n[Album|upcCode {PK};albumName;sales]\n[Releases|artistNum]\n[Genre|genreName {PK};description]\n[Label]1..1 - 0..*[Artist]\n[Artist]1..* - 0..*[Song]\n[Artist]1..1 - 0..*[Releases]\n[Releases]1..* - 1..1[Album]\n[Song]1..1 - 1..*[IsOn]\n[IsOn]1..* - 1..1[Album]\n[Album]0..* - 1..1[Genre]"
+        }
+    ]
+}

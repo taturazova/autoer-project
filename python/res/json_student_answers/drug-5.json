@@ -1,0 +1,74 @@
+{
+    "entities": [
+        {
+            "entity_name": "Patient",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "age",
+                "name",
+                "ssn"
+            ]
+        },
+        {
+            "entity_name": "Doctor",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "experience",
+                "name",
+                "specialty",
+                "ssn"
+            ]
+        },
+        {
+            "entity_name": "Drug",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "formula",
+                "name",
+                "price"
+            ]
+        },
+        {
+            "entity_name": "Pharmacy",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "id",
+                "name",
+                "phone"
+            ]
+        },
+        {
+            "entity_name": "Supervisor",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Doctor",
+                "Patient"
+            ],
+            "Patient": "1..*",
+            "Doctor": "1..1"
+        },
+        {
+            "entities": [
+                "Pharmacy",
+                "Supervisor"
+            ],
+            "Pharmacy": "1..1",
+            "Supervisor": "1..1"
+        }
+    ]
+}

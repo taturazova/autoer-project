@@ -1,0 +1,73 @@
+{
+    "entities": [
+        {
+            "entity_name": "Estimate",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "cost",
+                "id",
+                "time"
+            ]
+        },
+        {
+            "entity_name": "Job",
+            "primary_key": [
+                "num"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "num",
+                "repairDate"
+            ]
+        },
+        {
+            "entity_name": "Repair",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "description",
+                "num",
+                "partCost"
+            ]
+        },
+        {
+            "entity_name": "Mechanic",
+            "primary_key": [
+                "name"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "hourlyRate",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Car",
+            "primary_key": [
+                "licnum"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "custAddress",
+                "custName",
+                "licnum",
+                "make",
+                "model",
+                "year"
+            ]
+        },
+        {
+            "entity_name": "WorksOn",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "laborCost",
+                "time"
+            ]
+        }
+    ],
+    "relationships": []
+}

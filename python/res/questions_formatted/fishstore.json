@@ -1,0 +1,24 @@
+{
+    "id": 2,
+    "title": "fishstore",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "Construct a database design in UML for a fish store where:\n\nA fish store maintains a number of [aquaria tanks](tank), each with a [number](number), [name](name), [volume](volume) and [color](color).\nEach [tank](tank) contains a number of [fish](fish), each with an [id](id), [name](name), [color](color), and [weight](weight).\nEach [fish](fish) is of a particular [species](species), which has a [id](id), [name](name), and [preferred food](preferredFood).\nEach individual [fish](fish) has a number of [events](event) in its life, involving a [date](date) and a [note](note) relating to the event.\n",
+    "answers": [
+        {
+            "answer": "[Tank|number {PK};name;volume;color]\n[Fish|id {PK};name;color;weight]\n[Species|id {PK};name;preferredFood]\n[Event|date {PPK};note]\n[Tank]1..1 - 0..*[Fish]\n[Fish]1..* - 1..1[Species]\n[Fish]1..1 - 0..*[Event]"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+[Tank|number {PK};name;volume;color]
+[Fish|id {PK};name;color;weight]
+[Species|id {PK};name;preferredFood]
+[Event|date {PPK};note]
+[Tank]1..1 - 0..*[Fish]
+[Fish]1..* - 1..1[Species]
+[Fish]1..1 - 0..*[Event]

@@ -1,0 +1,5 @@
+[State|name]
+[Congressperson|name;district;startdate]
+[Bill|name;votedate;status]
+[State]1..1 - 1..*[Congressperson]
+[Congressperson]1..1 - 0..*[Bill]

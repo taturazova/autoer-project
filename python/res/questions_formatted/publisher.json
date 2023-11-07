@@ -1,0 +1,24 @@
+{
+    "id": 16,
+    "title": "publisher",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "Construct a database design in UML for an app store described below.\n\nA [Publisher](publisher) where each [publisher](publisher) is identified by an [id](id) and has a [name](name).\nA [Category](category) where each [category](category) has an [id](id), a [name](name), and may have a parent [category](category).\nAn [App](app) storing each [app](app) that is identified by a field called [id](id) and other attributes include [name](name) and [description](description). An [App](app) is created by one [Publisher](publisher). A [Publisher](publisher) may publish multiple [Apps](app). An [App](app) has a [Category](category).\nA [AppVersion](appVersion) stores each version of the app. An [AppVersion](appVersion) is associated with exactly one [App](app). Use a [version](version) field to identify between [versions](appVersion) of the same [App](app). Each [AppVersion](appVersion) has a [release date](releaseDate), a [rating](rating), a [price](price), and a [description](description).\nA [AppVersionReview](appVersionReview) stores [ratings](rating) for each application version. Each [instance](appVersionReview) applies to a single [AppVersion](appVersion), and different [reviews](appVersionReview) are identified by [reviewer](reviewer) attribute (which is name of reviewer). There is also a [reviewDate](reviewDate), [rating](rating), and [review](review).",
+    "answers": [
+        {
+            "answer": "[Publisher|id {PK};name]\n[Category|id {PK};name]\n[App|id {PK};name;description]\n[AppVersion|version {PPK};releaseDate;rating;price;description]\n[AppVersionReview|rating;reviewer {PPK};reviewDate;review]\n[Publisher]1..1 - 0..*[App]\n[App]1..1 - *[AppVersion]\n[App]0..* - 1..1[Category]\n[AppVersion]1..1 - 0..*[AppVersionReview]\n[Category]0..* - 0..1[Category]"
+        }
+    ]
+}

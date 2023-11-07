@@ -1,0 +1,249 @@
+{
+    "entities": [
+        {
+            "entity_name": "PaymentMethod",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "expiryDate",
+                "id",
+                "number",
+                "type"
+            ]
+        },
+        {
+            "entity_name": "Customer",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "city",
+                "country",
+                "email",
+                "firstName",
+                "id",
+                "lastName",
+                "password",
+                "phone",
+                "postCode",
+                "state",
+                "streetAddress",
+                "userId"
+            ]
+        },
+        {
+            "entity_name": "OrderSummary",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "date",
+                "id",
+                "shipToAddress",
+                "shipToCity",
+                "shipToCountry",
+                "shipToPostCode",
+                "shipToState",
+                "totalAmount"
+            ]
+        },
+        {
+            "entity_name": "Review",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "comment",
+                "date",
+                "id",
+                "rating"
+            ]
+        },
+        {
+            "entity_name": "InCart",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "price",
+                "quantity"
+            ]
+        },
+        {
+            "entity_name": "OrderProduct",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "price",
+                "quantity"
+            ]
+        },
+        {
+            "entity_name": "Category",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Product",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "description",
+                "id",
+                "image",
+                "imageURL",
+                "name",
+                "price"
+            ]
+        },
+        {
+            "entity_name": "Shipment",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "date",
+                "description",
+                "id"
+            ]
+        },
+        {
+            "entity_name": "ProductInventory",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "quantity"
+            ]
+        },
+        {
+            "entity_name": "Warehouse",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Category",
+                "Product"
+            ],
+            "Category": "1..1",
+            "Product": "1..*"
+        },
+        {
+            "entities": [
+                "Customer",
+                "PaymentMethod"
+            ],
+            "Customer": "1..1",
+            "PaymentMethod": "*"
+        },
+        {
+            "entities": [
+                "Customer",
+                "OrderSummary"
+            ],
+            "Customer": "1..1",
+            "OrderSummary": "0..*"
+        },
+        {
+            "entities": [
+                "Customer",
+                "InCart"
+            ],
+            "Customer": "1..1",
+            "InCart": "0..*"
+        },
+        {
+            "entities": [
+                "Customer",
+                "Review"
+            ],
+            "Customer": "1..1",
+            "Review": "0..*"
+        },
+        {
+            "entities": [
+                "InCart",
+                "Product"
+            ],
+            "InCart": "0..*",
+            "Product": "1..1"
+        },
+        {
+            "entities": [
+                "OrderProduct",
+                "OrderSummary"
+            ],
+            "OrderSummary": "1..1",
+            "OrderProduct": "*"
+        },
+        {
+            "entities": [
+                "OrderProduct",
+                "Product"
+            ],
+            "OrderProduct": "0..*",
+            "Product": "1..1"
+        },
+        {
+            "entities": [
+                "OrderSummary",
+                "Shipment"
+            ],
+            "OrderSummary": "1..1",
+            "Shipment": "1..1"
+        },
+        {
+            "entities": [
+                "Product",
+                "Review"
+            ],
+            "Review": "0..*",
+            "Product": "1..1"
+        },
+        {
+            "entities": [
+                "Product",
+                "ProductInventory"
+            ],
+            "ProductInventory": "0..*",
+            "Product": "1..1"
+        },
+        {
+            "entities": [
+                "ProductInventory",
+                "Warehouse"
+            ],
+            "ProductInventory": "0..*",
+            "Warehouse": "1..1"
+        },
+        {
+            "entities": [
+                "Shipment",
+                "Warehouse"
+            ],
+            "Shipment": "0..*",
+            "Warehouse": "1..1"
+        }
+    ]
+}

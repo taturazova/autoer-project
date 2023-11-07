@@ -1,0 +1,104 @@
+{
+    "entities": [
+        {
+            "entity_name": "Bank",
+            "primary_key": [
+                "code"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "code",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Branch",
+            "primary_key": [
+                "code"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "code"
+            ]
+        },
+        {
+            "entity_name": "Customer",
+            "primary_key": [
+                "ssn"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "name",
+                "phone",
+                "ssn"
+            ]
+        },
+        {
+            "entity_name": "Loan",
+            "primary_key": [],
+            "partial_primary_key": [
+                "number"
+            ],
+            "attributes": [
+                "amount",
+                "number"
+            ]
+        },
+        {
+            "entity_name": "Account",
+            "primary_key": [],
+            "partial_primary_key": [
+                "number"
+            ],
+            "attributes": [
+                "balance",
+                "number"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Account",
+                "Branch"
+            ],
+            "Branch": "1..1",
+            "Account": "0..*"
+        },
+        {
+            "entities": [
+                "Account",
+                "Customer"
+            ],
+            "Account": "0..*",
+            "Customer": "1..1"
+        },
+        {
+            "entities": [
+                "Bank",
+                "Branch"
+            ],
+            "Bank": "1..1",
+            "Branch": "1..*"
+        },
+        {
+            "entities": [
+                "Branch",
+                "Loan"
+            ],
+            "Branch": "1..1",
+            "Loan": "0..*"
+        },
+        {
+            "entities": [
+                "Customer",
+                "Loan"
+            ],
+            "Loan": "0..*",
+            "Customer": "1..1"
+        }
+    ]
+}

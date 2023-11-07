@@ -1,0 +1,83 @@
+{
+    "entities": [
+        {
+            "entity_name": "Branch",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "code"
+            ]
+        },
+        {
+            "entity_name": "Customer",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "name",
+                "ssn"
+            ]
+        },
+        {
+            "entity_name": "Loan",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "amount",
+                "number"
+            ]
+        },
+        {
+            "entity_name": "Account",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "balance",
+                "number"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Account",
+                "Customer"
+            ],
+            "Account": "0..*",
+            "Customer": "1..1"
+        },
+        {
+            "entities": [
+                "Account",
+                "Branch"
+            ],
+            "Branch": "0..1",
+            "Account": "1..*"
+        },
+        {
+            "entities": [
+                "Branch",
+                "Loan"
+            ],
+            "Branch": "1..1",
+            "Loan": "1..*"
+        },
+        {
+            "entities": [
+                "Branch",
+                "Customer"
+            ],
+            "Branch": "0..*",
+            "Customer": "0..*"
+        },
+        {
+            "entities": [
+                "Customer",
+                "Loan"
+            ],
+            "Loan": "0..*",
+            "Customer": "1..1"
+        }
+    ]
+}

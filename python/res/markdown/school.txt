@@ -1,0 +1,6 @@
+There are multiple [Schools](school) in the school management system. A [School](school) is identified by its [name](schoolName) and has a [location](location).
+A [Teacher](teacher) is identified by their [teacher number](teacherNum) and has a [name](name). Each [school](school) has a single [teacher](teacher) as a principal, and a [teacher](teacher) may be the principal at only one [school](school).
+[Teachers](teacher) are [located in](locatedIn) [schools](school). A teacher may be [located in](locatedIn) more than one [school](school). A teacher located at a school has an [office number](officeNum) and a [salary](salary) paid by that [school](school).
+A [Student](student) is identified by their [student id](studentId) and also has a [name](name) and [gender](gender).
+A [student](student) takes a [course](course) with a [teacher](teacher) at a particular [school](school). Each [course](course) is identifed by its own [id](courseId) and also has a [meeting date](date).
+At a [course](course) zero or more [tests](test) are run each with a [score](score) and an [outcome {Pass/Fail}](outcome). Each [test](test) is identified for a particular [course](course) by [name](testName).

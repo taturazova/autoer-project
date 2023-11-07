@@ -1,0 +1,5 @@
+[Patient|ssn;name;address;age]
+[Doctor|ssn;name;specialty;experience]
+[Drug|name;formula;price]
+[Pharmacy|id;name;address;phone]
+[Supervisor|name;id]

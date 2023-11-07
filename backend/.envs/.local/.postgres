@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=auto_marking_api
+POSTGRES_USER=ZibkEQqKrTzNJjcTjNOzlthOTygrTMqw
+POSTGRES_PASSWORD=RrMXGW9y1mSXNEAhKY2Yk63MaJyVluZFGzMUBjMmt4Dai8QOvv65L4SbG4sjP4yB

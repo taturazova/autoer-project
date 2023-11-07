@@ -1,0 +1,50 @@
+{
+    "entities": [
+        {
+            "entity_name": "State",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Congressperson",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "district",
+                "name",
+                "startdate"
+            ]
+        },
+        {
+            "entity_name": "Bill",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "name",
+                "status",
+                "votedate"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Bill",
+                "Congressperson"
+            ],
+            "Congressperson": "1..1",
+            "Bill": "0..*"
+        },
+        {
+            "entities": [
+                "Congressperson",
+                "State"
+            ],
+            "State": "1..1",
+            "Congressperson": "1..*"
+        }
+    ]
+}

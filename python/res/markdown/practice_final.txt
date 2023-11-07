@@ -1,0 +1,10 @@
+Design an ER diagram in UML format for a  hospital database given these details:
+Note: Do NOT show data types and do NOT model a hospital entity.
+•	The hospital has [departments](department) which have a unique [name](name) and also a [description](description).
+•	The hospital has [doctors](doctor). Each [doctor](doctor) is assigned a unique [id](id) and has a [name](name).  
+•   A [doctor](doctor) may [work in](worksIn) multiple [departments](department). In each [department](department) a [doctor](doctor) [works](worksIn), they are given a position [title](title).
+•	[Patients](patient) come to the hospital and are assigned a unique [id](id).  Also store their [name](name) and [age](age).
+•	A list of [drugs](drug) is maintained. Each [drug](drug) is identified by a [UPC](upcCode) code and has a [name](name).
+•	A [patient](patient) [visits](visit) a [doctor](doctor). Multiple [visits](visit) by a [patient](patient) to a [doctor](doctor) are differentiated by [date](date).
+•	At a [visit](visit), zero or more [tests](test) are run. Each [test](test) has a [name](name) that is unique for a [visit](visit), and a [cost](cost) and an [outcome](outcome).  
+•	A [doctor](doctor) may [prescribe](prescription) a [drug](drug) for a [patient](patient). Each [prescription](prescription) is for a single [patient](patient) by a single [doctor](doctor) for a single [drug](drug) and also contains a [dosage](dosage) and prescription [date](date).

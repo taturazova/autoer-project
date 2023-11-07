@@ -1,0 +1,79 @@
+{
+    "entities": [
+        {
+            "entity_name": "Tank",
+            "primary_key": [
+                "number"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "color",
+                "name",
+                "number",
+                "volume"
+            ]
+        },
+        {
+            "entity_name": "Fish",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "color",
+                "id",
+                "name",
+                "weight"
+            ]
+        },
+        {
+            "entity_name": "Species",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name",
+                "preferredFood"
+            ]
+        },
+        {
+            "entity_name": "Event",
+            "primary_key": [],
+            "partial_primary_key": [
+                "date"
+            ],
+            "attributes": [
+                "date",
+                "note"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Event",
+                "Fish"
+            ],
+            "Fish": "1..1",
+            "Event": "0..*"
+        },
+        {
+            "entities": [
+                "Fish",
+                "Tank"
+            ],
+            "Tank": "1..1",
+            "Fish": "0..*"
+        },
+        {
+            "entities": [
+                "Fish",
+                "Species"
+            ],
+            "Fish": "1..*",
+            "Species": "1..1"
+        }
+    ]
+}

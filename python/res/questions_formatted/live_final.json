@@ -1,0 +1,24 @@
+{
+    "id": 8,
+    "title": "live_final",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "Design an ER diagram in UML format for a game database given these details:\n\u2022\tA [publisher](publisher) is identified by [name](name) and [releases](releases) [games](game). A [game](game) may be [released](releases) by multiple [publishers](publisher), and each [publisher](publisher) gets credit for a [percent](percent) of the game. (e.g. Publisher A 60%, Publisher B 40%).\n\u2022\tA [game](game) is identified by [id](id) and also has a [name](name). \n\u2022\tA [game](game) has one [category](category), and a [category](category) may describe multiple [games](game). A [category](category) is identified by an [id](id) and has a [name](name). A [category](category) may also have multiple subcategories.\n\u2022\tA [player](player) is identified by a [userid] and also has a [name](name) and [age](age). A [player](player) may own multiple [games](game), and a [game](game) may be owned by multiple [players](player).\n\u2022\tA [session](session) is a particular [player](player) playing a [game](game), and the [start time](starttime) is used to identify between [sessions](session) of the same [game](game) and [player](player) combination.\n\u2022\tDuring a [session](session), [stats](stats) are recorded. For a particular [session](session), the [name](statname) of the stat identifies it, and a [value](value) is stored for this [statistic](stats).\n",
+    "answers": [
+        {
+            "answer": "[Publisher|name {PK}]\n[Releases|percent]\n[Game|id {PK}; name]\n[Category|id {PK}; name]\n[Session|starttime {PPK}]\n[Stats|statname {PPK}; value]\n[Player|userid{PK}; name; age]\n[Publisher]1..1 - 0..*[Releases]\n[Game]1..1 - *[Publisher]\n[Game]0..* - 1..1[Category]\n[Category]1..1 - 0..*[Category]\n[Game]0..* - 0..*[Player]\n[Game]1..1 - 0..*[Session]\n[Player]1..1 - 0..*[Session]\n[Session]1..1 - *[Stats]"
+        }
+    ]
+}

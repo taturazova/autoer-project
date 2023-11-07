@@ -1,0 +1,7 @@
+Design an ER diagram in UML format for a game database given these details:
+•	A [publisher](publisher) is identified by [name](name) and [releases](releases) [games](game). A [game](game) may be [released](releases) by multiple [publishers](publisher), and each [publisher](publisher) gets credit for a [percent](percent) of the game. (e.g. Publisher A 60%, Publisher B 40%).
+•	A [game](game) is identified by [id](id) and also has a [name](name). 
+•	A [game](game) has one [category](category), and a [category](category) may describe multiple [games](game). A [category](category) is identified by an [id](id) and has a [name](name). A [category](category) may also have multiple subcategories.
+•	A [player](player) is identified by a [userid](userid) and also has a [name](name) and [age](age). A [player](player) may own multiple [games](game), and a [game](game) may be owned by multiple [players](player).
+•	A [session](session) is a particular [player](player) playing a [game](game), and the [start time](starttime) is used to identify between [sessions](session) of the same [game](game) and [player](player) combination.
+•	During a [session](session), [stats](stats) are recorded. For a particular [session](session), the [name](statname) of the stat identifies it, and a [value](value) is stored for this [statistic](stats).

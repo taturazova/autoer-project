@@ -1,0 +1,27 @@
+{
+    "id": 13,
+    "title": "autoshop",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "[Customers](Customer) bring their [cars](Car) to the shop for an estimate of repairs. \nOne [mechanic](Mechanic) looks at the car and estimates the total [cost](cost) and [time](time) required for the job. \nAn [estimate](Estimate) has a unique [id](id). If the [customer](Customer) accepts the [estimate](Estimate), a [job](Job) is created from the estimate. \nA [job](Job) has a unique [number](num) is scheduled for a certain [date](repairDate). \nInformation on the [car](Car) is recorded such as the car's [license plate number](licnum) (unique), [make](make), [model](model), [year](year), and the customer's [name](custName) and [address](custAddress). \nA car may come in for service multiple times (may have multiple jobs). \nA [job](Job) is divided into a list of [repairs](Repair). Each [repair](Repair) has a [number](num), [part cost](partCost) and [description](description). \nA repair may be [done by](WorksOn) one or more mechanics, who can work for different amounts of [time](time). A [mechanic](mechanic) has a unique [name](name) and an [hourly rate](hourlyRate). \nThe [labor cost](laborCost) of a mechanic [working on](WorksOn) a repair is calculated using his time and the mechanic's hourly rate.",
+    "answers": [
+        {
+            "answer": "[Estimate| id {PK}; cost; time]\n[Job| num {PK}; repairDate]\n[Repair| num; partCost; description]\n[Mechanic| name {PK}; hourlyRate]\n[Car| licnum {PK}; make; model; year]\n[WorksOn| time; laborCost]\n[Customer| custName {PK}; custAddress]\n[Mechanic] 1..1 - [Estimate]\n[Estimate] 1..1 - 0..1[Job]\n[Estimate] 1..* - 1..1[Car]\n[Job] 1..* - 1..1[Car]\n[Job] 1..1 - 1..*[Repair]\n[Mechanic] 1..1 - 0..*[WorksOn]\n[Repair] 1..1 - 1..*[WorksOn]\n[Customer] 1..1 - 1..*[Car]"
+        },
+        {
+            "answer": "[Estimate| id {PK}; cost; time]\n[Job| num {PK}; repairDate]\n[Repair| num; partCost; description]\n[Mechanic| name {PK}; hourlyRate]\n[Car| licnum {PK}; make; model; year; custName; custAddress]\n[WorksOn| time; laborCost]\n[Mechanic] 1..1 - 0..*[Estimate]\n[Estimate] 1..1 - 0..1[Job]\n[Estimate] 1..* - 1..1[Car]\n[Job] 1..* - 1..1[Car]\n[Job] 1..1 - 1..*[Repair]\n[Mechanic] 1..1 - 0..*[WorksOn]\n[Repair] 1..1 - 1..*[WorksOn]"
+        }
+    ]
+}

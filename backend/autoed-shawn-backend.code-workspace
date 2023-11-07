@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"name": "AutoEd Backend",
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "Cobalt2",
+		"python.analysis.extraPaths": [
+			"./",
+			"./backend"
+		],
+		"python.linting.pylintEnabled": true,
+		"python.linting.pycodestyleEnabled": false,
+		"python.linting.pylintArgs": [
+			"--load-plugins=pylint_django,pylint_celery",
+			"--load-plugins",
+			"pylint_django",
+			"--django-settings-module=config.settings",
+		],
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": false
+	}
+}

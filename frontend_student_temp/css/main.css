@@ -1,0 +1,64 @@
+.error {
+    margin-bottom: 1rem;
+    background-color: rgba(255, 73, 73, 0.322);
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 90%;
+    max-width: 800px;
+}
+
+#loader {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #333;
+}
+
+#loader noscript {
+    padding: 1rem;
+    background-color: rgba(255, 73, 73, 0.322);
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+#loader .code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+  
+#loader .loader-spinner {
+    border: 5px solid #555;
+    border-radius: 100%;
+    border-top: 5px solid #0000;
+    height: 40px;
+    width: 40px;
+    pointer-events: none;
+    animation: loader-spinner-spin infinite 0.75s linear;
+}
+  
+@media (prefers-reduced-motion: no-preference) {
+    #loader .loader-spinner {
+        animation: loader-spinner-spin infinite 1s linear;
+    }
+}
+  
+@keyframes loader-spinner-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+  

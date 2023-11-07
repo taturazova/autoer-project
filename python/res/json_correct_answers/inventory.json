@@ -1,0 +1,118 @@
+{
+    "entities": [
+        {
+            "entity_name": "Warehouse",
+            "primary_key": [
+                "warehouseName"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "city",
+                "state",
+                "warehouseName"
+            ]
+        },
+        {
+            "entity_name": "Product",
+            "primary_key": [
+                "productId"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "name",
+                "price",
+                "productId"
+            ]
+        },
+        {
+            "entity_name": "Stores",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "inventory"
+            ]
+        },
+        {
+            "entity_name": "Shipment",
+            "primary_key": [
+                "shipmentNumber"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "contact",
+                "shipmentNumber",
+                "shipperName"
+            ]
+        },
+        {
+            "entity_name": "Contains",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "quantity"
+            ]
+        },
+        {
+            "entity_name": "Customer",
+            "primary_key": [
+                "customerNum"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "customerNum",
+                "name"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Contains",
+                "Shipment"
+            ],
+            "Shipment": "1..1",
+            "Contains": "1..*"
+        },
+        {
+            "entities": [
+                "Contains",
+                "Product"
+            ],
+            "Contains": "0..*",
+            "Product": "1..1"
+        },
+        {
+            "entities": [
+                "Customer",
+                "Shipment"
+            ],
+            "Shipment": "0..*",
+            "Customer": "1..1"
+        },
+        {
+            "entities": [
+                "Product",
+                "Stores"
+            ],
+            "Stores": "0..*",
+            "Product": "1..1"
+        },
+        {
+            "entities": [
+                "Shipment",
+                "Warehouse"
+            ],
+            "Shipment": "0..*",
+            "Warehouse": "1..1"
+        },
+        {
+            "entities": [
+                "Stores",
+                "Warehouse"
+            ],
+            "Warehouse": "1..1",
+            "Stores": "0..*"
+        }
+    ]
+}

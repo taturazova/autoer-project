@@ -1,0 +1,24 @@
+{
+    "id": 10,
+    "title": "inventory",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "The logistics manager at your company wants to design a database to store the following information about warehouses.\nEach [warehouse](warehouse) has a unique [warehouse name](warehouseName). Also, store the [city](city) and [state](state) of the warehouse. \n[Products](product) have a unique [product id](productId), [name](name), and [price](price). \nStore the [volume](inventory)(inventory) of each [product](product) [at each](stores) [warehouse](warehouse). \nNot all [products](product) are [stored at](stores) each [warehouse](warehouse) and a [warehouse](warehouse) may not [store](stores) all [products](product).\nA [shipment](shipment) identified by a unique [shipment number](shipmentNumber) has a [shipper name](shipperName) and [contact](contact). A [shipment](shipment) is filled from only one [warehouse](warehouse). \nEach [shipment](shipment) [contains](contains) at least one [product](product). Each [product](product) [shipped](contains) has a [quantity](quantity).\nA [shipment](shipment) goes to a single [customer](customer) where each [customer](customer) is identified by a [customer number](customerNum), [name](name), and [address](address).",
+    "answers": [
+        {
+            "answer": "[Warehouse|warehouseName {PK};city;state]\n[Product|productId {PK};name;price]\n[Stores|inventory]\n[Shipment|shipmentNumber {PK};shipperName;contact]\n[Contains|quantity]\n[Customer|customerNum {PK};name;address]\n[Shipment]0..* - 1..1[Warehouse]\n[Shipment]1..1 - 1..*[Contains]\n[Shipment]0..* - 1..1[Customer]\n[Contains]0..* - 1..1[Product]\n[Warehouse]1..1 - 0..*[Stores]\n[Stores]0..* - 1..1[Product]"
+        }
+    ]
+}

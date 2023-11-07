@@ -1,0 +1,35 @@
+{
+    "entities": [
+        {
+            "entity_name": "Estimate",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": []
+        },
+        {
+            "entity_name": "Job",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": []
+        },
+        {
+            "entity_name": "Repair",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": []
+        },
+        {
+            "entity_name": "Mechanic",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": []
+        },
+        {
+            "entity_name": "Car",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": []
+        }
+    ],
+    "relationships": []
+}

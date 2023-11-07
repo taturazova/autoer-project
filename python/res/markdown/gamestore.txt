@@ -1,0 +1,7 @@
+Construct a database design in UML for an Online Game store described below.
+
+A [Developer](developer) where each [Developer](developer) is identified by an [id](id) and has a [name](name).
+A [Category](category) where each [category](category) has an [id](id), a [name](name), and may have a parent [category](category).
+A [Game](game) storing each [Game](game) that is identified by a field called [id](id) and other attributes include [name](name) and [description](description). A [game](game) is created by one [developer](developer). A [developer](developer) may publish multiple [games](game). A [game](game) has a [Category](category).
+A [GameVersion](gameVersion) stores each version of the game. A [game version](gameVersion) is associated with exactly one [game](game). Use a [version](version) field to identify between [versions](gameVersion) of the same [game](game). Each [gameVersion](gameVersion) has a [release date](releaseDate), a [rating](rating), a [price](price), and a [description](description).
+A [GameVersionReview](gameVersionReview) stores [ratings](rating) for each game version. Each [instance](gameVersionReview) applies to a single [gameVersion](gameVersion), and different [reviews](gameVersionReview) are identified by [reviewer](reviewer) attribute (which is name of reviewer). There is also a [reviewDate](reviewDate), [rating](rating), and [review](review).

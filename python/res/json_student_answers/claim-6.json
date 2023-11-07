@@ -1,0 +1,45 @@
+{
+    "entities": [
+        {
+            "entity_name": "Person",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "name",
+                "socialsecurity"
+            ]
+        },
+        {
+            "entity_name": "Car",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "licence",
+                "make",
+                "model",
+                "state"
+            ]
+        },
+        {
+            "entity_name": "Claim",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "claimid",
+                "description",
+                "policynum"
+            ]
+        },
+        {
+            "entity_name": "Lineitem",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "amount",
+                "date"
+            ]
+        }
+    ],
+    "relationships": []
+}

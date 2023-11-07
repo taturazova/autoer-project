@@ -1,0 +1,24 @@
+{
+    "id": 14,
+    "title": "project",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "A [Customer](customer) is identified by an auto-increment [id](id). Other attributes include [first name](firstName), [last name](lastName), [email](email), [phone number](phone), [street address](streetAddress), [city](city), [province/state](state), [postal code](postCode), and [country](country). A [Customer](customer) also has a [user id](userId) (unique) and [password](password).\nA [customer](customer) may have one or more [payment methods](paymentMethod). A [Payment Method](paymentMethod) has an auto-increment [id](id) for a key, a [payment method type](type) (PayPal, Visa, etc.), [payment number](number), and [payment expiry date](expiryDate).\nAn [Order](orderSummary) is placed by one [customer](customer). A [customer](customer) may have multiple [orders](orders). An [Order](orderSummary) has an auto-increment [id](id), order [date](date), and [total order amount](totalAmount) (e.g. $55.75). Also store the [shipment address](shipToAddress), [city](shipToCity), [state](shipToState), [country](shipToCountry), and [postal code](shipToPostCode). Use [OrderSummary](orderSummary) as entity/table name as order is a keyword in SQL.\nThe store sells [products](product). A [Product](Product) has an auto-increment [id](id), [name](name), [price](price), [image URL](imageURL) (string), [image](image) (BLOB), and [description](description).\nA [product](product) has a [category](category). A [category](category) has one or more [products](product). A [Category](category) has an auto-increment [id](id) and [name](name).\n[Products](product) are [part of](orderProduct) an [order](orderSummary). An [order](orderSummary) may have one or more [products](product). For each [product](product) [in an](orderProduct) [order](orderSummary) track the [quantity](quantity) and [price](price).\nAn [order](orderSummary) is shipped with a [shipment](shipment). A [Shipment](shipment) has an auto-increment [id](id), a [shipment date](date), and a [description](description). A [shipment](shipment) contains only one [order](order).\nA [Warehouse](warehouse) contains [products](product). A [product](product) may be [stored at](productInventory) multiple [warehouses](warehouse)  with different [inventory values](quantity). A [shipment](shipment) will be sent from only one [warehouse](warehouse). A [Warehouse](warehouse) has an auto-increment [id](id) and a [name](name).\nFor each [customer](customer), track their [shopping cart](inCart) which will contain one or more [products](product)  each with a [quantity](quantity) and [price](price).\nA [product](product) may have [reviews](review) by [customers](customer). A [Review](review) by a [customer](customer) on a [product](product) has an auto-increment [id](id), [rating](rating) (1 to 5), [comment](comment), and review [date](date). A [customer](customer) does not have to buy a [product](product) in order to provide a [review](review). A [customer](customer) may [review](review) a [product](product) more than once.",
+    "answers": [
+        {
+            "answer": "[PaymentMethod| id {PK}; type; number; expiryDate]\n[Customer| id {PK}; firstName; lastName; email; phone; streetAddress; city; state; postCode; country; userId; password]\n[OrderSummary| id {PK}; date; totalAmount; shipToAddress; shipToCity; shipToState; shipToPostCode; shipToCountry]\n[Review| id {PK}; rating; comment; date]\n[InCart| quantity; price]\n[OrderProduct| quantity; price]\n[Category| id {PK}; name]\n[Product| id {PK}; name; price; imageURL; image; description]\n[Shipment| id {PK}; date; description]\n[ProductInventory| quantity]\n[Warehouse| id {PK}; name]\n[Customer]1..1 - *[PaymentMethod]\n[Customer]1..1 - 0..*[OrderSummary]\n[Customer]1..1 - 0..*[InCart]\n[Customer]1..1 - 0..*[Review]\n[OrderSummary]1..1 - *[OrderProduct]\n[OrderSummary]1..1 - 1..1[Shipment]\n[Review]0..* - 1..1[Product]\n[InCart]0..* - 1..1[Product]\n[OrderProduct]0..* - 1..1[Product]\n[Category]1..1 - 1..*[Product]\n[ProductInventory]0..* - 1..1[Product]\n[ProductInventory]0..* - 1..1[Warehouse]\n[Shipment]0..* - 1..1[Warehouse]"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+A [Person](Person) is identified by [social security number](socialsecurity). The person [name](name) and [address](address) must be recorded.
+[Cars](Car) are identified by [license plate](licence) and [state](state). For each car, the [model](model), [make](make), and [year](year) is recorded.
+A [claim](Claim) has a unique [id](claimid). Also store a [policy number](policynum) and [description](description).
+A [car](Car) is owned by a single [person](Person). A person may own multiple cars.
+A [claim](Claim) has multiple [line items](LineItem). Each [line item](LineItem) involves a particular person and car involved in the claim. A [l]ine item](LineItem) should store the [date](date) it was created and the [amount](amount) claimed. A line item is identified by its creation date and the claim id it is associated with.
+Multiple [payments](Payment) may be made for a claim to the person involved in the claim with values for [amount](amount) and [date](date) of payment.
+Draw the ER diagram for this database and convert it a into relational schema. This time create the schema using SQL DDL and make sure to define primary keys and foreign keys.

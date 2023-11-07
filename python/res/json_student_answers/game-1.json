@@ -1,0 +1,142 @@
+{
+    "entities": [
+        {
+            "entity_name": "Publisher",
+            "primary_key": [
+                "name"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Releases",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "percent"
+            ]
+        },
+        {
+            "entity_name": "Game",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Category",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Player",
+            "primary_key": [
+                "userId"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "age",
+                "name",
+                "userId"
+            ]
+        },
+        {
+            "entity_name": "Session",
+            "primary_key": [],
+            "partial_primary_key": [
+                "startTime"
+            ],
+            "attributes": [
+                "startTime"
+            ]
+        },
+        {
+            "entity_name": "Stats",
+            "primary_key": [],
+            "partial_primary_key": [
+                "statName"
+            ],
+            "attributes": [
+                "statName",
+                "value"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Category",
+                "Game"
+            ],
+            "Game": "0..*",
+            "Category": "1..1"
+        },
+        {
+            "entities": [
+                "Category",
+                "Category"
+            ],
+            "Category": "0..*"
+        },
+        {
+            "entities": [
+                "Game",
+                "Releases"
+            ],
+            "Releases": "0..*",
+            "Game": "1..1"
+        },
+        {
+            "entities": [
+                "Game",
+                "Session"
+            ],
+            "Game": "1..1",
+            "Session": "0..*"
+        },
+        {
+            "entities": [
+                "Game",
+                "Player"
+            ],
+            "Game": "0..*",
+            "Player": "0..*"
+        },
+        {
+            "entities": [
+                "Player",
+                "Session"
+            ],
+            "Session": "0..*",
+            "Player": "1..1"
+        },
+        {
+            "entities": [
+                "Publisher",
+                "Releases"
+            ],
+            "Publisher": "1..1",
+            "Releases": "0..*"
+        },
+        {
+            "entities": [
+                "Session",
+                "Stats"
+            ],
+            "Session": "1..1",
+            "Stats": "0..*"
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+version: '3'
+
+volumes:
+  production_postgres_data: {}
+  production_postgres_data_backups: {}
+  production_traefik: {}
+
+services:
+
+  traefik:
+    build:
+      context: .
+      dockerfile: ./traefik/Dockerfile
+    image: auto_marking_api_production_traefik
+    command: --api.insecure=true --providers.docker
+    depends_on:
+      - django
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - production_traefik:/etc/traefik/acme:z
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
+  
+  django:
+    build:
+      context: ./backend
+      dockerfile: ./compose/production/django/Dockerfile
+    image: auto_marking_api_production_django
+    depends_on:
+      - postgres
+    env_file:
+      - ./backend/.envs/.production/.django
+      - ./backend/.envs/.production/.postgres
+    command: /start
+    labels:
+      - traefik.port=443
+      # - traefik.http.routers.api.rule=Host(`autoed.ok.ubc.ca`)
+
+  postgres:
+    build:
+      context: ./backend
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: auto_marking_api_production_postgres
+    volumes:
+      - production_postgres_data:/var/lib/postgresql/data:Z
+      - production_postgres_data_backups:/backups:z
+    env_file:
+      - ./backend/.envs/.production/.postgres
+
+  redis:
+    image: redis:5.0
+  
+  student:
+    container_name: student
+    build:
+      context: ./frontend_student
+      dockerfile: ./compose/production/Dockerfile
+    image: auto_marking_frontend_production_student
+    restart: always

@@ -1,0 +1,24 @@
+{
+    "id": 15,
+    "title": "student",
+    "created_by": 1,
+    "question_template": 1,
+    "maximum_grade": 10,
+    "other_marking_criteria": {
+        "correct_entity_name": 0.2,
+        "correct_attributes": 0.1,
+        "correct_primary_keys": 0.2,
+        "extra_entity": 0.25,
+        "correct_weak_entity": 0.5,
+        "correct_relationship_entity": 0.5,
+        "correct_cardinality": 0.25,
+        "extra_relationship": 0.25
+    },
+    "custom_css": "",
+    "question": "Design an ER diagram for a university:\nThe database needs to keep track of each [Instructor](instructor) with [id](id), [name](name), and [address](address). Each [instructor](instructor) works for one [department](department) and each [department](department) has at least one [instructor](instructor).\nThe [departments](department) have a unique [id](id) and a [name](name). \n[Courses](course) are offered by a single [department](department) and have a [number](courseNum) unique to each [department](department). Store the [course name](courseName), [credits](credits), and [description](description).\nEach [course](course) has at least one [section](section). A [section](section) is identified using its associated [course number](courseNum), [section number](sectionNum), [year](year), and [semester](semester). Also store the [size](size) of the [section](section). \n[Students](student) have [student ids](studentId) and [names](name). Each [student](student) has a single [instructor](instructor) as an advisor. \n[Students](student) enroll in one or more [sections](section). A [section](section) must have five [students](student) or it is cancelled. A [section](section) is taught by at least one [instructor](instructor).",
+    "answers": [
+        {
+            "answer": "[Instructor|id {PK};name;address]\n[Department|id {PK};name]\n[Course|courseNum {PPK};courseName;credits;description]\n[Section|sectionNum {PPK};year {PPK};semester {PPK};size]\n[Student|studentId {PK};name]\n[Instructor]1..* - 1..1[Department]\n[Instructor]1..1 - 0..*[Student]\n[Student]1..* - 1..*[Section]\n[Instructor]1..* - 0..*[Section]\n[Department]1..1 - 1..*[Course]\n[Course]1..1 - 1..*[Section]"
+        }
+    ]
+}

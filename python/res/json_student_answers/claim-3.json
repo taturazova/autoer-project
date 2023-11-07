@@ -1,0 +1,103 @@
+{
+    "entities": [
+        {
+            "entity_name": "Person",
+            "primary_key": [
+                "socialsecurity"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "name",
+                "socialsecurity"
+            ]
+        },
+        {
+            "entity_name": "Car",
+            "primary_key": [
+                "licence",
+                "state"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "licence",
+                "make",
+                "model",
+                "state",
+                "year"
+            ]
+        },
+        {
+            "entity_name": "Claim",
+            "primary_key": [
+                "claimid"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "claimid",
+                "description",
+                "policynum"
+            ]
+        },
+        {
+            "entity_name": "Lineitem",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "amount",
+                "date"
+            ]
+        },
+        {
+            "entity_name": "Payment",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "amount",
+                "date"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Car",
+                "Lineitem"
+            ],
+            "Car": "1..1",
+            "Lineitem": "0..*"
+        },
+        {
+            "entities": [
+                "Car",
+                "Person"
+            ],
+            "Person": "1..*",
+            "Car": "0..*"
+        },
+        {
+            "entities": [
+                "Claim",
+                "Payment"
+            ],
+            "Payment": "0..*",
+            "Claim": "1..1"
+        },
+        {
+            "entities": [
+                "Lineitem",
+                "Person"
+            ],
+            "Person": "1..1",
+            "Lineitem": "1..1"
+        },
+        {
+            "entities": [
+                "Payment",
+                "Person"
+            ],
+            "Person": "1..*",
+            "Payment": "0..*"
+        }
+    ]
+}

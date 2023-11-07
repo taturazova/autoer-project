@@ -1,0 +1,7 @@
+Design an ER diagram for a university:
+The database needs to keep track of each [Instructor](instructor) with [id](id), [name](name), and [address](address). Each [instructor](instructor) works for one [department](department) and each [department](department) has at least one [instructor](instructor).
+The [departments](department) have a unique [id](id) and a [name](name). 
+[Courses](course) are offered by a single [department](department) and have a [number](courseNum) unique to each [department](department). Store the [course name](courseName), [credits](credits), and [description](description).
+Each [course](course) has at least one [section](section). A [section](section) is identified using its associated [course number](courseNum), [section number](sectionNum), [year](year), and [semester](semester). Also store the [size](size) of the [section](section). 
+[Students](student) have [student ids](studentId) and [names](name). Each [student](student) has a single [instructor](instructor) as an advisor. 
+[Students](student) enroll in one or more [sections](section). A [section](section) must have five [students](student) or it is cancelled. A [section](section) is taught by at least one [instructor](instructor).

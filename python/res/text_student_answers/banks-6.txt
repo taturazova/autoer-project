@@ -1,0 +1,4 @@
+[Branch|code;address]
+[Customer|ssn;name;address]
+[Loan|number;amount]
+[Account|number;balance]

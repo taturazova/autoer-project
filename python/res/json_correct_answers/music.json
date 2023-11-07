@@ -1,0 +1,136 @@
+{
+    "entities": [
+        {
+            "entity_name": "RecordLabel",
+            "primary_key": [
+                "name"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "address",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Artist",
+            "primary_key": [],
+            "partial_primary_key": [
+                "id"
+            ],
+            "attributes": [
+                "age",
+                "id",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Song",
+            "primary_key": [
+                "id"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "id",
+                "title"
+            ]
+        },
+        {
+            "entity_name": "Album",
+            "primary_key": [
+                "UPC"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "UPC",
+                "name",
+                "sales"
+            ]
+        },
+        {
+            "entity_name": "Genre",
+            "primary_key": [
+                "name"
+            ],
+            "partial_primary_key": [],
+            "attributes": [
+                "description",
+                "name"
+            ]
+        },
+        {
+            "entity_name": "Releases",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "artistNum"
+            ]
+        },
+        {
+            "entity_name": "On",
+            "primary_key": [],
+            "partial_primary_key": [],
+            "attributes": [
+                "duration",
+                "trackNum"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "entities": [
+                "Album",
+                "Releases"
+            ],
+            "Album": "1",
+            "Releases": "1..*"
+        },
+        {
+            "entities": [
+                "Album",
+                "On"
+            ],
+            "Album": "1",
+            "On": "1..*"
+        },
+        {
+            "entities": [
+                "Album",
+                "Genre"
+            ],
+            "Album": "0..*",
+            "Genre": "1"
+        },
+        {
+            "entities": [
+                "Artist",
+                "RecordLabel"
+            ],
+            "RecordLabel": "1",
+            "Artist": "0..*"
+        },
+        {
+            "entities": [
+                "Artist",
+                "Song"
+            ],
+            "Artist": "1..*",
+            "Song": "0..*"
+        },
+        {
+            "entities": [
+                "Artist",
+                "Releases"
+            ],
+            "Artist": "1",
+            "Releases": "0..*"
+        },
+        {
+            "entities": [
+                "On",
+                "Song"
+            ],
+            "Song": "1",
+            "On": "1..*"
+        }
+    ]
+}

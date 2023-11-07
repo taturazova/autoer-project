@@ -1,0 +1,71 @@
+version: '3'
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
+services:
+  django:
+    build:
+      context: ./backend
+      dockerfile: ./compose/local/django/Dockerfile
+    image: auto_marking_api_local_django
+    container_name: django
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend:/app:z
+    env_file:
+      - ./backend/.envs/.local/.django
+      - ./backend/.envs/.local/.postgres
+    ports:
+      - "8000"
+    command: /start
+
+  postgres:
+    build:
+      context: ./backend
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: auto_marking_api_local_postgres
+    container_name: postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data:Z
+      - local_postgres_data_backups:/backups:z
+    env_file:
+      - ./backend/.envs/.local/.postgres
+  
+  # editor:
+  #   build:
+  #     context: ./frontend_editor
+  #     dockerfile: ./compose/local/Dockerfile
+  #   image: auto_marking_frontend_editor
+  #   container_name: editor
+  #   volumes:
+  #     - './frontend_editor:/app'
+  #     - '/app/node_modules'
+  #   ports:
+  #     - "7000"
+  #   environment:
+  #     - CHOKIDAR_USEPOLLING=true
+  
+  student:
+    build:
+      context: ./frontend_student
+      dockerfile: ./compose/local/Dockerfile
+    image: auto_marking_frontend_student
+    container_name: student
+    volumes:
+      - './frontend_student:/usr/share/nginx/html'
+    restart: always
+    ports:
+      - "9000"
+  
+  nginx:
+    image: nginx:latest
+    container_name: reverse_proxy
+    volumes:
+      - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./reverse_proxy/logs:/etc/nginx/logs
+    ports:
+      - 80:80
+      - 443:443

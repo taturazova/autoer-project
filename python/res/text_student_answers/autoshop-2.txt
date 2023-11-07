@@ -1,0 +1,6 @@
+[Estimate|id {PK};time]
+[Job|num {PK};repairDate]
+[Repair|num {PK};partCost;description]
+[Mechanic|name {PK};hourlyRate]
+[Car|licnum {PK};make;model;year;custName;custAddress]
+[Workson|time;laborCost]
